@@ -71,6 +71,7 @@ Vagrant.configure("2") do |config|
   
   sudo apt-get update
   sudo apt-get install git wget flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+  sudo apt-get install linux-image-extra-virtual -y 
 
 
   wget https://dl.espressif.com/dl/xtensa-esp32-elf-linux64-1.22.0-80-g6c4433a-5.2.0.tar.gz
