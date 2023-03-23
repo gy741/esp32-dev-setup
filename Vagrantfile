@@ -87,10 +87,12 @@ Vagrant.configure("2") do |config|
 
   git submodule update --init
   echo 'export IDF_PATH="'$(pwd)'"' >> /home/vagrant/.profile
-  ./install.sh esp32
-  
+
+  sudo su - vagrant -c "cd /home/vagrant/esp-idf && ./install.sh all && . /home/vagrant/esp-idf/export.sh && exit"
+
   echo '. $HOME/esp-idf/export.sh' >> /home/vagrant/.profile
-  
+  echo "alias get_idf='. $HOME/esp-idf/export.sh'" >> /home/vagrant/.profile
+
   cd ..
 
   git clone https://github.com/hackgnar/ble_ctf
