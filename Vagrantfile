@@ -87,7 +87,8 @@ Vagrant.configure("2") do |config|
 
   git submodule update --init
   echo 'export IDF_PATH="'$(pwd)'"' >> /home/vagrant/.profile
-  ./install.sh all
+  ./install.sh esp32
+  
   echo '. $HOME/esp-idf/export.sh' >> /home/vagrant/.profile
   
   cd ..
